@@ -20,6 +20,7 @@ function App() {
       {name}
     
      {/* <Video/> */}
+     <div>Areesh</div>
      <div>Videos</div>
      <space> </space>
      <Video {...obj}>
