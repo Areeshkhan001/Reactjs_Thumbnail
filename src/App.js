@@ -1,9 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Video from "./components/video/Video";
+import VideoDB from "./data"
 import PlayButton from "./components/video/playbutton";
 import Pause from "./components/video/pause";
 import { useState } from "react";
+import Counter from "./components/video/counter";
 
 let Videos = [
   {
@@ -44,14 +46,28 @@ function App() {
     Videos.map((item) => {
       if (item.id === id) {
         item.playing = !item.playing;
-      }
+       }
+      
     });
     setUpdateVideos(!updateVideos);
   }
 
   return (
+    Const [Video,setVideo] = useState(VideoDB);
     <div className="App">
-      <div>Videos</div>
+      <div>
+      <button onClick={( )=>{
+     
+      
+        setVideo( [...video,
+          { id: video.length+1,
+       title: "Js Tutorial",
+       views: "100k",
+       time: "2 year ago",
+       channel: "programming",
+       verified: true,
+       playing: false,}]);
+          }}>Add Videos</button></div>
       {Videos.map((video) => {
         return (
           <Video
@@ -74,6 +90,7 @@ function App() {
           </Video>
         );
       })}
+      <Counter></Counter>
     </div>
   );
 }
