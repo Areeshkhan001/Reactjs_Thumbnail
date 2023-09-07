@@ -6,7 +6,7 @@ function Video({ title, views, channel = "programming", time, verified, children
 
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ marginTop: 24 }}>
         <div className="pic">
           <img
             src="https://i.imgur.com/MK3eW3As.jpg "
